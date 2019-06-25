@@ -10,6 +10,11 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *mealbillField;
+@property (weak, nonatomic) IBOutlet UILabel *tipLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *tipControl;
+
 @end
 
 @implementation ViewController
@@ -19,5 +24,48 @@
     // Do any additional setup after loading the view.
 }
 
+//Removes keyboard when tapping elsewhere.
+- (IBAction)onTap:(id)sender {
+    NSLog(@"Hello");
+    [self.view endEditing:YES];
+}
+
+//Recalculates tip and total fields when parameters are edited.
+- (IBAction)onEdit:(id)sender {
+    
+    double bill = [self.mealbillField.text doubleValue];
+    
+    NSArray *percentages = @[@(0.15), @(0.18), @(0.20)];
+    double tipPercentage = [percentages[self.tipControl.selectedSegmentIndex] doubleValue];
+    
+    double tip = tipPercentage * bill;
+    double total = bill + tip;
+    
+    self.tipLabel.text = [NSString stringWithFormat:@"$%0.2f", tip];
+    self.totalLabel.text = [NSString stringWithFormat:@"$%0.2f", total];
+}
+
+//Animations upon begin edit billfield.
+- (IBAction)onEditingBegin:(id)sender {
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        self.mealbillField.frame = CGRectMake(self.mealbillField.frame.origin.x, self.mealbillField.frame.origin.y + 30, self.mealbillField.frame.size.width, self.mealbillField.frame.size.height);
+        self.tipLabel.alpha = 0;
+    }];
+}
+    
+
+//Return billfield to default after edit.
+- (IBAction)onEditingEnd:(id)sender {
+    CGRect newFrame = self.mealbillField.frame;
+    newFrame.origin.y -= 30;
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        self.mealbillField.frame = newFrame;
+        self.tipLabel.alpha = 1;
+    }];
+    self.mealbillField.frame = newFrame;
+    
+}
 
 @end
