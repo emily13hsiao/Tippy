@@ -15,6 +15,7 @@
 		FCE3166C22C2C01A003E3BE1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE3166B22C2C01A003E3BE1 /* main.m */; };
 		FCE3167622C2C01A003E3BE1 /* TippyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE3167522C2C01A003E3BE1 /* TippyTests.m */; };
 		FCE3168122C2C01A003E3BE1 /* TippyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE3168022C2C01A003E3BE1 /* TippyUITests.m */; };
+		FCE3169022C2E1F5003E3BE1 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE3168F22C2E1F5003E3BE1 /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		FCE3167C22C2C01A003E3BE1 /* TippyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TippyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE3168022C2C01A003E3BE1 /* TippyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TippyUITests.m; sourceTree = "<group>"; };
 		FCE3168222C2C01A003E3BE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCE3168E22C2E1F5003E3BE1 /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		FCE3168F22C2E1F5003E3BE1 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,8 @@
 				FCE3165F22C2C019003E3BE1 /* ViewController.h */,
 				FCE3166022C2C019003E3BE1 /* ViewController.m */,
 				FCE3166222C2C019003E3BE1 /* Main.storyboard */,
+				FCE3168E22C2E1F5003E3BE1 /* SettingsViewController.h */,
+				FCE3168F22C2E1F5003E3BE1 /* SettingsViewController.m */,
 				FCE3166522C2C01A003E3BE1 /* Assets.xcassets */,
 				FCE3166722C2C01A003E3BE1 /* LaunchScreen.storyboard */,
 				FCE3166A22C2C01A003E3BE1 /* Info.plist */,
@@ -265,6 +270,7 @@
 				FCE3166122C2C019003E3BE1 /* ViewController.m in Sources */,
 				FCE3166C22C2C01A003E3BE1 /* main.m in Sources */,
 				FCE3165E22C2C019003E3BE1 /* AppDelegate.m in Sources */,
+				FCE3169022C2E1F5003E3BE1 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

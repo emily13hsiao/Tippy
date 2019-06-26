@@ -21,7 +21,45 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    //Load default tip.
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    double doubleValue = [defaults doubleForKey:@"default_tip_percentage"];
+    
+    NSLog(@"Default: %0.2f", doubleValue);
+    
+    int tip_index;
+    if (doubleValue == 0.15) {
+        tip_index = 0;
+    } else if (doubleValue == 0.18){
+        tip_index = 1;
+    } else {
+        tip_index = 2;
+    }
+    
+    [self.tipControl setSelectedSegmentIndex:tip_index];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    NSLog(@"View did appear");
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    NSLog(@"View will disappear");
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    NSLog(@"View did disappear");
 }
 
 //Removes keyboard when tapping elsewhere.
